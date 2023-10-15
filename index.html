@@ -4,61 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Verbes Irréguliers en Anglais</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>VerbMaster</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="icon" href="./src/asset/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/asset/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <h1>Sélectionnez les blocs de verbes à tester</h1>
+    <div class="content">
+        <h1>Veuillez choisir vos blocs de verbes</h1>
+        <div class="check-group">
+            <label for="myCheckbox01" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox01">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 1 - Trois pour le prix d'un</span>
+            </label>
+            <label for="myCheckbox02" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox02">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 2 - Deux pour le prix d'un</span>
+            </label>
+            <label for="myCheckbox03" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox03">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 3 - Deux pour le prix d'un</span>
+            </label>
+            <label for="myCheckbox04" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox04">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 4 - Deux pour le prix d'un (ght)</span>
+            </label>
+            <label for="myCheckbox05" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox05">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 5 - Pack spécial voyelles (i/u, a, u)</span>
+            </label>
+            <label for="myCheckbox06" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox06">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 6 - Un bonus "-en" pour le participe passé spécial voyelles (i/u, a,
+                    u)</span>
+            </label>
+            <label for="myCheckbox07" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox07">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 7 - Pack spécial "-ew", "-awn", "-own"</span>
+            </label>
+            <label for="myCheckbox08" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox08">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 8 - Pack famille "come"</span>
+            </label>
+            <label for="myCheckbox09" class="checkbox">
+                <input class="checkbox__input" type="checkbox" id="myCheckbox09">
+                <svg class="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                    <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                    <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4"
+                        d="M4 10l5 5 9-9" />
+                </svg>
+                <span class="checkbox__label">Bloc 9 - Pack bonus multiformes</span>
+            </label>
+            <div class="check-group__result">Blocs choisis:</div>
+        </div>
+        <br>
+        <button class="button-start" role="button">Commencer l'entraînement</button>
 
-    <form id="verbForm">
-        <label>
-            <input type="checkbox" name="block1" value="block1"> Bloc 1 - 3 pour le prix d'un
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block2" value="block2"> Bloc 2 - 2 pour le prix d'un
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block3" value="block3"> Bloc 3 - 2 pour le prix d'un + T final bonus
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block4" value="block4"> Bloc 4 - 2 pour le prix d'un (ght)
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block5" value="block5"> Bloc 5 - pack spécial voyelles (i/u, a, u)
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block6" value="block6"> Bloc 6 - un bonus "-en" pour le participe passé
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block7" value="block7"> Bloc 7 - pack spécial "-ew", "-awn", "-own"
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block8" value="block8"> Bloc 8 - pack family "come"
-        </label>
-        <br>
-        <label>
-            <input type="checkbox" name="block9" value="block9"> Bloc 9 - pack bonus multiformes
-        </label>
-        <br>
-        <button type="submit">Commencer le test</button>
-    </form>
-
-    <div id="verbList" class="hidden">
-        <!-- La liste des questions sera générée ici -->
     </div>
-
-    <div id="scoreContainer" class="hidden"></div>
-    <div id="correctionsContainer" class="hidden"></div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
