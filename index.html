@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Verbes Irréguliers en Anglais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Sélectionnez les blocs de verbes à tester</h1>
+
+    <form id="verbForm">
+        <label>
+            <input type="checkbox" name="block1" value="block1"> Bloc 1 - 3 pour le prix d'un
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block2" value="block2"> Bloc 2 - 2 pour le prix d'un
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block3" value="block3"> Bloc 3 - 2 pour le prix d'un + T final bonus
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block4" value="block4"> Bloc 4 - 2 pour le prix d'un (ght)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block5" value="block5"> Bloc 5 - pack spécial voyelles (i/u, a, u)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block6" value="block6"> Bloc 6 - un bonus "-en" pour le participe passé
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block7" value="block7"> Bloc 7 - pack spécial "-ew", "-awn", "-own"
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block8" value="block8"> Bloc 8 - pack family "come"
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="block9" value="block9"> Bloc 9 - pack bonus multiformes
+        </label>
+        <br>
+        <button type="submit">Commencer le test</button>
+    </form>
+
+    <div id="verbList" class="hidden">
+        <!-- La liste des questions sera générée ici -->
+    </div>
+
+    <div id="scoreContainer" class="hidden"></div>
+    <div id="correctionsContainer" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
