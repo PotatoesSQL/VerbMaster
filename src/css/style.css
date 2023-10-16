@@ -116,4 +116,37 @@ body {
     display: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    margin-top: 1rem;
+    color: #006F94;
+    align-items: center;
+    background-color: #FCFCFD;
+    box-shadow: 0 1px 3px rgba(0, 0, 10, 0.4);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
 
+@media screen and (max-width: 550px) {
+    /* Styles pour les écrans plus petits */
+    .button-view,
+    .button-view1,
+    .button-view2,
+    .button-view3,
+    .button-view4,
+    .button-view5,
+    .button-view6,
+    .button-view7,
+    .button-view8,
+    .button-view9 {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    /* Autres styles adaptés aux petits écrans */
+}
