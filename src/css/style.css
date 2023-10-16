@@ -88,6 +88,8 @@ body {
     border: none;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin: 0 auto;
+    display: block;
 }
 
 .button-view {
@@ -112,6 +114,15 @@ body {
     justify-content: center;
 }
 
+.note,
+.score,
+a.button-start {
+    margin: 0 auto !important;
+    display: block !important;
+    font-size: larger;
+    align-items: center !important;
+}
+
 .test {
     display: none;
 }
@@ -133,20 +144,32 @@ a {
     padding-right: 0.8rem;
 }
 
-@media screen and (max-width: 550px) {
-    /* Styles pour les écrans plus petits */
-    .button-view,
-    .button-view1,
-    .button-view2,
-    .button-view3,
-    .button-view4,
-    .button-view5,
-    .button-view6,
-    .button-view7,
-    .button-view8,
-    .button-view9 {
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-    /* Autres styles adaptés aux petits écrans */
+.verb-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.verb-table th,
+.verb-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.verb-input {
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+.verb-input:not([readonly]) {
+    width: 100%;
+    border: none;
+    text-align: center;
+    color: rgb(149, 138, 138)
+}
+
+.verb-input.empty {
+    background-color: #f2f2f2; 
 }

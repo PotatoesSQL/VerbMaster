@@ -92,60 +92,225 @@ const verbs = {
     ]
 };
 
-let selectedBlocks = [];
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const buttonStart = document.querySelector('.button-start');
+    let attempts = 3; // Nombre d'essais
+    let correctAnswersCount = 0; // Compteur de bonnes réponses
+    const correctAnswers = []; // Tableau pour stocker les bonnes réponses
+    let attemptsRemaining; // Élément pour afficher les tentatives restantes
 
     buttonStart.addEventListener('click', function () {
         const selectedCheckboxes = document.querySelectorAll('.checkbox__input:checked');
+
         if (selectedCheckboxes.length > 0) {
+            // Les affichages
             const content = document.querySelector('.content');
             content.style.display = 'none';
 
             const test = document.querySelector('.test');
-            test.style.display = 'block'; 
+            test.style.display = 'block';
+
+            // Récupérer les verbes des blocs sélectionnés
+            let selectedVerbs = [];
+            selectedCheckboxes.forEach(function (checkbox) {
+                const value = checkbox.value;
+                const blockVerbs = verbs[value];
+                selectedVerbs = selectedVerbs.concat(blockVerbs);
+            });
+
+            // Mélanger les verbes
+            selectedVerbs = selectedVerbs.sort(() => Math.random() - 0.5).slice(0, 20);
+
+            // Créer le tableau avec les verbes aléatoires
+            const table = document.createElement('table');
+            table.classList.add('verb-table');
+
+            // Créer l'en-tête du tableau
+            const headerRow = document.createElement('tr');
+            const headers = ['N°', 'Base Verbale', 'Prétérit', 'Participe Passé', 'Français'];
+            headers.forEach(headerText => {
+                const header = document.createElement('th');
+                header.textContent = headerText;
+                headerRow.appendChild(header);
+            });
+            table.appendChild(headerRow);
+
+            // Ajouter les lignes avec une forme connue aléatoire
+            selectedVerbs.forEach((verb, index) => {
+                const row = document.createElement('tr');
+
+                // Numéro de la ligne
+                const numberCell = document.createElement('td');
+                numberCell.textContent = index + 1;
+                row.appendChild(numberCell);
+
+                const knownFormIndex = Math.floor(Math.random() * verb.length); // Index de la forme connue
+                verb.forEach((form, index) => {
+                    const cell = document.createElement('td');
+                    const input = document.createElement('input');
+                    input.setAttribute('type', 'text');
+                    input.classList.add('verb-input');
+                    input.dataset.correctValue = form; // Stocker la réponse correcte
+
+                    if (index === knownFormIndex) {
+                        input.value = form; // Mettre la forme connue dans l'input
+                        input.readOnly = true; // Rendre l'input non modifiable
+                        input.classList.add('randomized'); // Ajouter une classe pour identifier les cases remplies aléatoirement
+                        input.addEventListener('mousedown', function (event) {
+                            event.preventDefault(); // Empêcher le clic
+                        });
+                    }
+
+                    cell.appendChild(input);
+                    row.appendChild(cell);
+                });
+                table.appendChild(row);
+            });
+
+            const verbTableContainer = document.getElementById('blocContainer');
+            verbTableContainer.innerHTML = '';
+            verbTableContainer.appendChild(table);
+
+            // Créer le bouton "Vérifier"
+            const verifyButton = document.createElement('button');
+            verifyButton.classList.add('button-start');
+            verifyButton.textContent = 'Vérifier';
+            verifyButton.addEventListener('click', function () {
+                attempts--;
+
+                attemptsRemaining.textContent = `Tentatives restantes : ${attempts}`; // Mettre à jour les tentatives restantes
+
+                // Parcourir les cellules et les vérifier
+                const cells = document.querySelectorAll('.verb-input:not(.randomized)'); // Ne vérifier que les cases non remplies aléatoirement
+                cells.forEach(function (cell) {
+                    const inputValue = cell.value;
+                    const correctValue = cell.dataset.correctValue;
+
+                    // Comparer les valeurs
+                    if (inputValue === correctValue) {
+                        cell.style.color = 'green'; // Le verbe est correct
+                        cell.parentNode.classList.add('correct');
+                        correctAnswersCount++; // Incrémenter le compteur de bonnes réponses
+                    } else {
+                        cell.style.color = 'red'; // Le verbe est incorrect
+                        cell.readOnly = false; // Permettre la modification de la case incorrecte
+                    }
+                });
+
+                if (correctAnswersCount === 20) {
+                    attempts = 0; // Mettre le nombre de tentatives à 0 pour éviter de compter les essais supplémentaires
+                    verifyButton.disabled = true; // Désactiver le bouton après 3 essais
+
+                    // Calculer le score et la note
+                    let score = (correctAnswersCount / 20) * 100;
+
+                    // Si le score dépasse 100%, le limiter à 100%
+                    if (score > 100) {
+                        score = 100;
+                    }
+
+                    // Afficher le score
+                    const scoreElement = document.createElement('div');
+                    scoreElement.classList.add('score');
+                    scoreElement.textContent = `Score : ${score.toFixed(2)}%`;
+
+                    // Calculer la note sur 20
+                    let note = (score / 100) * 20;
+
+                    // Si la note dépasse 20, la limiter à 20
+                    if (note > 20) {
+                        note = 20;
+                    }
+
+                    // Afficher la note
+                    const noteElement = document.createElement('div');
+                    noteElement.classList.add('note');
+                    noteElement.textContent = `Note : ${note.toFixed(2)}/20`;
+
+                    const returnElement = document.createElement('a');
+                    returnElement.classList.add('button-start');
+                    returnElement.textContent = `Retour`;
+                    returnElement.href = '';
+
+                    verbTableContainer.innerHTML = ''; // Effacer le contenu précédent
+
+                    // Ajouter les éléments au conteneur
+                    verbTableContainer.appendChild(scoreElement);
+                    verbTableContainer.appendChild(noteElement);
+                    verbTableContainer.appendChild(returnElement);
+
+                    // Cacher le tableau et le bouton "Vérifier"
+                    table.style.display = 'none';
+                    verifyButton.style.display = 'none';
+                    attemptsRemaining.style.display = 'none';
+                } else if (attempts === 0) {
+                    verifyButton.disabled = true; // Désactiver le bouton après 3 essais
+
+                    // Calculer le score et la note
+                    let score = (correctAnswersCount / 20) * 100;
+
+                    // Si le score dépasse 100%, le limiter à 100%
+                    if (score > 100) {
+                        score = 100;
+                    }
+
+                    // Afficher le score
+                    const scoreElement = document.createElement('div');
+                    scoreElement.classList.add('score');
+                    scoreElement.textContent = `Score : ${score.toFixed(2)}%`;
+
+                    // Calculer la note sur 20
+                    let note = (score / 100) * 20;
+
+                    // Si la note dépasse 20, la limiter à 20
+                    if (note > 20) {
+                        note = 20;
+                    }
+
+                    // Afficher la note
+                    const noteElement = document.createElement('div');
+                    noteElement.classList.add('note');
+                    noteElement.textContent = `Note : ${note.toFixed(2)}/20`;
+
+                    const returnElement = document.createElement('a');
+                    returnElement.classList.add('button-start');
+                    returnElement.textContent = `Retour`;
+                    returnElement.href = '';
+
+                    verbTableContainer.innerHTML = ''; // Effacer le contenu précédent
+
+                    // Ajouter les éléments au conteneur
+                    verbTableContainer.appendChild(scoreElement);
+                    verbTableContainer.appendChild(noteElement);
+                    verbTableContainer.appendChild(returnElement);
+
+                    // Cacher le tableau et le bouton "Vérifier"
+                    table.style.display = 'none';
+                    verifyButton.style.display = 'none';
+                    attemptsRemaining.style.display = 'none';
+                }
+                // Ajouter les réponses correctes au tableau correctAnswers
+                cells.forEach(function (cell) {
+                    correctAnswers.push(cell.dataset.correctValue);
+                });
+
+            });
+
+            // Empêcher la propagation du clic sur les cases du tableau
+            table.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+
+            // Afficher le nombre d'essais restants
+            attemptsRemaining = document.createElement('div');
+            attemptsRemaining.classList.add('attempts-remaining');
+            attemptsRemaining.textContent = `Tentatives restantes : ${attempts}`;
+            verbTableContainer.appendChild(attemptsRemaining);
+
+            verbTableContainer.appendChild(verifyButton);
+
         } else {
             alert('Veuillez sélectionner au moins un bloc.');
         }
     });
 });
-
-
-function afficherBloc(bloc) {
-    for (let i = 1; i <= 8; i++) {
-        const buttonView = document.querySelector(`.button-view${i}`);
-        buttonView.classList.add('hidden');
-    }
-
-    const buttonViewInitial = document.querySelector(`.button-view`);
-    buttonViewInitial.classList.add('hidden');
-    const verbTableContainer = document.getElementById('blocContainer');
-    const verbTableBody = document.getElementById('blocTableBody');
-    verbTableContainer.classList.remove('hidden');
-    verbTableBody.innerHTML = '';
-
-    const blocTitle = document.querySelector('#blocTitle');
-    blocTitle.textContent = `Bloc n°${bloc.charAt(bloc.length - 1)}`;
-
-    verbs[bloc].forEach(verb => {
-        const row = document.createElement('tr');
-        verb.forEach(form => {
-            const cell = document.createElement('td');
-            cell.textContent = form;
-            row.appendChild(cell);
-        });
-        verbTableBody.appendChild(row);
-    });
-}
-
-function retour() {
-    for (let i = 1; i <= 8; i++) {
-        const buttonView = document.querySelector(`.button-view${i}`);
-        buttonView.classList.remove('hidden');
-    }
-
-    const verbTableContainer = document.getElementById('blocContainer');
-    verbTableContainer.classList.add('hidden');
-}
