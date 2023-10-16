@@ -46,7 +46,8 @@ th {
 tbody tr:nth-child(even) {
     background-color: #f3f3f3;
 }
-.button-view,
+
+.button-view9,
 .button-view1,
 .button-view2,
 .button-view3,
@@ -72,6 +73,10 @@ tbody tr:nth-child(even) {
 
 .hidden {
     display: none;
+}
+
+.blocTitle {
+    text-align: center;
 }
 
 @media screen and (max-width: 550px) {

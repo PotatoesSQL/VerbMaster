@@ -93,20 +93,19 @@ const verbs = {
 };
 
 function afficherBloc(bloc) {
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 9; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.add('hidden');
     }
 
-    const buttonViewInitial = document.querySelector(`.button-view`);
-    buttonViewInitial.classList.add('hidden');
     const verbTableContainer = document.getElementById('blocContainer');
     const verbTableBody = document.getElementById('blocTableBody');
     verbTableContainer.classList.remove('hidden');
     verbTableBody.innerHTML = '';
 
-    const blocTitle = document.querySelector('#blocTitle');
-    blocTitle.textContent = `Bloc n°${bloc.charAt(bloc.length - 1)}`;
+    const blocTitle = document.querySelector('.blocTitle');
+    blocTitle.textContent = `Bloc n°${bloc.charAt(bloc.length - 1)}`; 7
+    console.log(verbTableContainer)
 
     verbs[bloc].forEach(verb => {
         const row = document.createElement('tr');
@@ -120,7 +119,7 @@ function afficherBloc(bloc) {
 }
 
 function retour() {
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 9; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.remove('hidden');
     }
