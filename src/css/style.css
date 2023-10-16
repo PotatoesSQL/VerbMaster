@@ -90,6 +90,21 @@ body {
     padding-right: 1rem;
 }
 
+.button-view {
+    align-items: center;
+    background-color: #FCFCFD;
+    box-shadow: 0 1px 3px rgba(0, 0, 10, 0.4);
+    border-radius: 0.5rem;
+    color: #006F94;
+    cursor: pointer;
+    height: 2rem;
+    font-size: 0.8rem;
+    border-radius: none;
+    border: none;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -100,3 +115,5 @@ body {
 .test {
     display: none;
 }
+
+

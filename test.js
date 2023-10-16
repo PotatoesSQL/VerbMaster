@@ -92,27 +92,6 @@ const verbs = {
     ]
 };
 
-let selectedBlocks = [];
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const buttonStart = document.querySelector('.button-start');
-
-    buttonStart.addEventListener('click', function () {
-        const selectedCheckboxes = document.querySelectorAll('.checkbox__input:checked');
-        if (selectedCheckboxes.length > 0) {
-            const content = document.querySelector('.content');
-            content.style.display = 'none';
-
-            const test = document.querySelector('.test');
-            test.style.display = 'block'; 
-        } else {
-            alert('Veuillez sélectionner au moins un bloc.');
-        }
-    });
-});
-
-
 function afficherBloc(bloc) {
     for (let i = 1; i <= 8; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
@@ -149,3 +128,7 @@ function retour() {
     const verbTableContainer = document.getElementById('blocContainer');
     verbTableContainer.classList.add('hidden');
 }
+
+
+
+

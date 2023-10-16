@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+    <div class="container">
+        <button class="button-view" role="button" onclick="afficherBloc('block1')">Afficher Bloc 1</button>
+        <button class="button-view1" role="button" onclick="afficherBloc('block2')">Afficher Bloc 2</button>
+        <button class="button-view2" role="button" onclick="afficherBloc('block3')">Afficher Bloc 3</button>
+        <button class="button-view3" role="button" onclick="afficherBloc('block4')">Afficher Bloc 4</button>
+        <button class="button-view4" role="button" onclick="afficherBloc('block5')">Afficher Bloc 5</button>
+        <button class="button-view5" role="button" onclick="afficherBloc('block6')">Afficher Bloc 6</button>
+        <button class="button-view6" role="button" onclick="afficherBloc('block7')">Afficher Bloc 7</button>
+        <button class="button-view7" role="button" onclick="afficherBloc('block8')">Afficher Bloc 8</button>
+        <button class="button-view8" role="button" onclick="afficherBloc('block9')">Afficher Bloc 9</button>
+    </div>
+
+    <div id="blocContainer" class="hidden">
+        <h1 id="blocTitle"></h1>
+        <table id="blocTable" class="table-style">
+            <thead>
+                <tr>
+                    <th>Base Verbale</th>
+                    <th>Prétérit</th>
+                    <th>Participe passé</th>
+                    <th>Français</th>
+                </tr>
+            </thead>
+            <tbody id="blocTableBody">
+                <!-- Les lignes du tableau seront générées ici -->
+            </tbody>
+        </table>
+        <button class="button-view" role="button" onclick="retour()">Retour</button>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+
+</html>
