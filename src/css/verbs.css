@@ -60,10 +60,10 @@ tbody tr:nth-child(even) {
     cursor: pointer;
     font-size: 3vh;
     border: none;
-    padding: 0 1.2rem;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
-    margin-bottom: 0.8rem;
+    padding: 0 1vhm;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
     width: 25vh;
     height: 8vh;
 }
@@ -81,8 +81,8 @@ tbody tr:nth-child(even) {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
 }
 
 .button-return {
