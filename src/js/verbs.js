@@ -128,6 +128,3 @@ function retour() {
     verbTableContainer.classList.add('hidden');
 }
 
-
-
-
