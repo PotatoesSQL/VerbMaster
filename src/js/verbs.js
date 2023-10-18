@@ -97,6 +97,11 @@ function afficherBloc(bloc) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.add('hidden');
     }
+    const h1Element = document.querySelector('h1');
+    h1Element.classList.add('hidden');
+
+    const buttonReturn = document.querySelector('.button-return');
+    buttonReturn.classList.add('hidden');
 
     const verbTableContainer = document.getElementById('blocContainer');
     const verbTableBody = document.getElementById('blocTableBody');
@@ -119,12 +124,18 @@ function afficherBloc(bloc) {
 }
 
 function retour() {
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 9; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.remove('hidden');
     }
 
     const verbTableContainer = document.getElementById('blocContainer');
     verbTableContainer.classList.add('hidden');
+
+    const buttonReturn = document.querySelector('.button-return');
+    buttonReturn.classList.remove('hidden');
+
+    const h1Element = document.querySelector('h1');
+    h1Element.classList.remove('hidden');
 }
 
