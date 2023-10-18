@@ -52,20 +52,21 @@ tbody tr:nth-child(even) {
 .button-view6,
 .button-view7,
 .button-view8,
-.button-view9 {
+.button-view9,
+.button-view10 {
     background-color: #FCFCFD;
     box-shadow: 0 1px 3px rgba(0, 0, 10, 0.4);
     border-radius: 0.7rem;
     color: #006F94;
     cursor: pointer;
-    font-size: 3vh;
+    font-size: 2.5vh;
     border: none;
-    padding: 0 1vhm;
+    padding: 0 1vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    margin-bottom: 4vh;
-    width: 25vh;
-    height: 8vh;
+    margin-bottom: 2vh;
+    width: 22vh;
+    height: 6vh;
 }
 
 .hidden {
@@ -91,8 +92,8 @@ tbody tr:nth-child(even) {
     border-radius: 0.5rem;
     color: #006F94;
     cursor: pointer;
-    width: 25vh;
-    height: 8vh;
+    width: 18vh;
+    height: 6vh;
     font-size: 3vh;
     margin-top: 0.8rem;
     border: none;
@@ -117,7 +118,8 @@ table {
     .button-view6,
     .button-view7,
     .button-view8,
-    .button-view9 {
+    .button-view9,
+    .button-view10 {
         font-size: 3vh;
     }
 

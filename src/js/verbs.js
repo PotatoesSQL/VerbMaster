@@ -93,7 +93,7 @@ const verbs = {
 };
 
 function afficherBloc(bloc) {
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 10; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.add('hidden');
     }
@@ -119,7 +119,7 @@ function afficherBloc(bloc) {
 }
 
 function retour() {
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 10; i++) {
         const buttonView = document.querySelector(`.button-view${i}`);
         buttonView.classList.remove('hidden');
     }
