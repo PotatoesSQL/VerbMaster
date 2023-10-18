@@ -132,3 +132,8 @@ table {
         font-size: 2vh;
     }
 }
+
+a.button-return {
+    padding-top: 0.45rem;
+    text-decoration: none !important;
+}
