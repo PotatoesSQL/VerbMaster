@@ -6,6 +6,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 10, 0.4);
     counter-reset: total;
     counter-reset: checked;
+    margin-bottom: 2vh;
 }
 
 .check-group>*+* {
@@ -172,5 +173,5 @@ a {
 }
 
 .verb-input.empty {
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2;
 }
