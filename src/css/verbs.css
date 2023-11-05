@@ -132,7 +132,8 @@ h1 {
     th,
     td {
         padding: 3vh;
-        display: block;
+        display: inline-block;
+        border: none;
     }
 
     .table-style {
