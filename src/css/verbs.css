@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    width: auto;
 }
 
 .table-style {
@@ -131,9 +132,8 @@ h1 {
 
     th,
     td {
-        padding: 3vh;
-        display: inline-block;
-        border: none;
+        padding: 1vh;
+        /* display: inline-block; */
     }
 
     .table-style {
