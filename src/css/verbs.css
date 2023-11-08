@@ -134,6 +134,7 @@ h1 {
     td {
         padding: 1vh;
         /* display: inline-block; */
+        white-space: normal;
     }
 
     .table-style {
