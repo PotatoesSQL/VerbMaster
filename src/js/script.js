@@ -12,11 +12,11 @@ const verbs = {
         ["find", "found", "found", "trouver"],
         ["have", "had", "had", "avoir"],
         ["hear", "heard", "heard", "entendre"],
-        ["make", "made", "made", "faire"],
+        ["make", "made", "made", "fabriquer"],
         ["pay", "paid", "paid", "payer"],
         ["say", "said", "said", "dire"],
         ["sell", "sold", "sold", "vendre"],
-        ["tell", "told", "told", "dire"],
+        ["tell", "told", "told", "raconter"],
         ["understand", "understood", "understood", "comprendre"],
         ["win", "won", "won", "gagner"]
     ],
@@ -43,8 +43,8 @@ const verbs = {
         ["bring", "brought", "brought", "apporter"],
         ["buy", "bought", "bought", "acheter"],
         ["catch", "caught", "caught", "attraper"],
-        ["light", "lit", "lit", "allumer"],
-        ["each", "each", "each", "chaque"],
+        ["fight", "fought", "fought", "se battre"],
+        ["teach", "taught", "taught", "enseigner"],
         ["think", "thought", "thought", "penser"]
     ],
     block5: [
@@ -67,18 +67,18 @@ const verbs = {
         ["forgive", "forgave", "forgiven", "pardonner"],
         ["freeze", "froze", "frozen", "geler"],
         ["hide", "hid", "hidden", "cacher"],
-        ["ride", "rode", "ridden", "chevaucher"],
+        ["ride", "rode", "ridden", "monter"],
         ["see", "saw", "seen", "voir"],
-        ["steal", "stole", "stolen", "voler (dérober)"],
+        ["steal", "stole", "stolen", "voler"],
         ["take", "took", "taken", "prendre"],
         ["wake", "woke", "woken", "se réveiller"],
         ["write", "wrote", "written", "écrire"]
     ],
     block7: [
         ["draw", "drew", "drawn", "dessiner"],
-        ["fly", "flew", "flown", "voler (avion)"],
+        ["fly", "flew", "flown", "voler"],
         ["know", "knew", "known", "savoir/connaître"],
-        ["throw", "threw", "thrown", "jeter"]
+        ["throw", "threw", "thrown", "lancer/jeter"]
     ],
     block8: [
         ["become", "became", "become", "devenir"],
@@ -91,6 +91,7 @@ const verbs = {
         ["go", "went", "gone", "aller"]
     ]
 };
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const buttonStart = document.querySelector('.button-start');
