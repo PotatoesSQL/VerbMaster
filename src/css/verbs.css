@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    width: auto;
 }
 
 .table-style {
@@ -22,6 +23,7 @@ body {
     border: 2px solid midnightblue;
     width: 100%;
     overflow-x: auto;
+
 }
 
 thead tr {
@@ -32,10 +34,11 @@ thead tr {
 
 th,
 td {
-    padding: 0.7rem;
+    padding: 3vh;
     text-align: center;
     border: 1px solid #ddd;
     white-space: nowrap;
+
 }
 
 tbody tr:nth-child(even) {
@@ -111,6 +114,7 @@ h1 {
 }
 
 @media screen and (max-width: 550px) {
+
     .button-view,
     .button-view1,
     .button-view2,
@@ -128,7 +132,9 @@ h1 {
 
     th,
     td {
-        padding: 1rem;
+        padding: 1vh;
+        /* display: inline-block; */
+        white-space: normal;
     }
 
     .table-style {
